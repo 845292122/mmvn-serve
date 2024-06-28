@@ -1,19 +1,20 @@
 # midway-admin 权限管理脚手架
 
 ## TODO
-- [x] 整合prisma
-- [ ] jwt认证
-- [ ] rbac-crud
-- [ ] 接口权限校验
+
+- [x] 整合 prisma
+- [x] jwt 认证
+- [x] 接口权限校验
 - [x] 全局异常处理
 - [x] 统一异常
 - [x] 统一响应体
 - [ ] 缓存操作
 - [ ] 定时任务
 - [ ] 日志
-- [ ] 参数校验
+- [x] 参数校验
 
-## src文件夹说明
+## src 文件夹说明
+
 - controller Web Controller 目录
 - middleware 中间件目录
 - filter 过滤器目录
