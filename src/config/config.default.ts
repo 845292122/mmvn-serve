@@ -4,6 +4,12 @@ export default {
   // use for cookie sign key, should change to your own and keep security
   keys: '1718414189094_854',
   koa: {
-    port: 9527,
+    port: 8080,
+  },
+  jwt: {
+    secret: 'mmvn-serve',
+    sign: {
+      expiresIn: '1d',
+    },
   },
 } as MidwayConfig;

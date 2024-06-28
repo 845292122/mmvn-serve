@@ -1,15 +1,17 @@
 /**
- * @description User-Service parameters
+ * page分页
  */
-export interface IUserOptions {
-  uid: number;
+export interface IPage {
+  pageNo: number;
+  pageSize: number;
+  total?: number;
+  records?: any;
 }
 
 /**
- * user
+ * 认证信息
  */
-export interface User {
-  id: number;
-  name: string;
-  age: number;
+export interface ILogin {
+  phone: string;
+  password: string;
 }

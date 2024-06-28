@@ -6,11 +6,14 @@ import { join } from 'path';
 import { ReportMiddleware } from './middleware/report.middleware';
 import { BizErrorFilter } from './filter/biz.filter';
 import { DefaultErrorFilter } from './filter/default.filter';
+import * as jwt from '@midwayjs/jwt';
 import { ResultMiddleware } from './middleware/result.middleware';
+import { JwtMiddleware } from './middleware/jwt.middleware';
 
 @Configuration({
   imports: [
     koa,
+    jwt,
     validate,
     {
       component: info,
@@ -25,7 +28,7 @@ export class MainConfiguration implements ILifeCycle {
 
   async onReady() {
     // add middleware
-    this.app.useMiddleware([ReportMiddleware, ResultMiddleware]);
+    this.app.useMiddleware([ReportMiddleware, ResultMiddleware, JwtMiddleware]);
     // add filter
     this.app.useFilter([BizErrorFilter, DefaultErrorFilter]);
   }

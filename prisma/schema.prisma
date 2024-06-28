@@ -26,6 +26,8 @@ model Account {
   contact      String?
   merchantName String?
   isAdmin      Int?     @default(0) @db.TinyInt
+  vip          Int?     @default(0) @db.TinyInt
+  deleted      Int      @default(0) @db.TinyInt
   createdAt    DateTime @default(dbgenerated("NOW()")) @db.DateTime
   updatedAt    DateTime @default(dbgenerated("NOW() ON UPDATE NOW()")) @db.Timestamp(0)
 
