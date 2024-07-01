@@ -22,11 +22,11 @@ export class AuthService {
    * @returns token
    */
   async login(loginInfo: ILogin, jwtIp: string): Promise<string> {
-    const condition: Prisma.AccountWhereUniqueInput = {
+    const condition: Prisma.AccountWhereInput = {
       deleted: 0,
       phone: loginInfo.phone,
     };
-    const accountInfo = await prisma.account.findUnique({
+    const accountInfo = await prisma.account.findFirst({
       where: condition,
     });
     if (!accountInfo) {
@@ -58,13 +58,13 @@ export class AuthService {
    * @param accountId 账户ID
    */
   async getAccountInfo(accountId: number): Promise<AccountDTO> {
-    const condition: Prisma.AccountWhereUniqueInput = {
+    const condition: Prisma.AccountWhereInput = {
       deleted: 0,
       id: accountId,
       status: 1,
     };
 
-    const accountInfo = await prisma.account.findUnique({
+    const accountInfo = await prisma.account.findFirst({
       where: condition,
       select: {
         id: true,

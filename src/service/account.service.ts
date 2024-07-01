@@ -19,7 +19,9 @@ export class AccountService {
       deleted: 0,
     };
     if (merchantName) {
-      condition.merchantName = merchantName;
+      condition.merchantName = {
+        startsWith: merchantName,
+      };
     }
 
     const skipNum: number = (query.pageNo - 1) * query.pageSize;

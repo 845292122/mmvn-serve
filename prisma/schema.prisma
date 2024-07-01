@@ -19,7 +19,7 @@ datasource db {
 
 model Account {
   id           Int      @id @default(autoincrement())
-  phone        String?  @unique
+  phone        String?
   password     String?
   status       Int?     @default(1) @db.TinyInt
   remark       String?
