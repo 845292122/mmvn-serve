@@ -1,5 +1,9 @@
 # midway-admin 权限管理脚手架
 
+## 配套前端
+
+https://github.com/845292122/mmvn-view
+
 ## TODO
 
 - [x] 整合 prisma
