@@ -29,3 +29,21 @@ https://github.com/845292122/mmvn-view
 - util 工具类存放的目录
 - decorator 自定义装饰器目录
 - interface.ts 业务的 ts 定义文件
+
+## 部署
+
+1. pnpm build 打包
+2. 将下列文件上传到服务器
+   1. dist 文件夹
+   2. prisma 文件夹
+   3. package.json
+   4. bootstrap.js
+   5. .env
+3. prisma 组件安装
+   1. 配置 PRISMA_ENGINES_MIRROR=https://registry.npmmirror.com/-/binary/prisma/
+   2. npx prisma generate
+   3. npx migrate ~~~
+4. 安装 node_modules
+5. 启动
+   1. 单机启动: $ pm2 start ./bootstrap.js --name test_app
+   2. 集群启动: $ NODE_ENV=production pm2 start ./bootstrap.js --name midway_app -i 4
